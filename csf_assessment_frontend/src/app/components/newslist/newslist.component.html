@@ -1,0 +1,14 @@
+<h1>List of News with {{tag}}</h1>
+
+<button (click)="goBack()"> Back </button>
+<br>
+<button (click)="postNews()"> Post News </button>
+
+<div *ngFor="let news of newsList">
+      <span> {{news.title}}</span>
+      <img [src]="news.image">
+      <span> {{news.description}} </span>
+      <p *ngFor="let tags of news.tags">
+        <button> {{tags}}</button>
+      </p>
+</div>

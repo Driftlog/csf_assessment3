@@ -1,0 +1,25 @@
+<h2>Time</h2>
+
+
+
+<select [value]="interval" (change)="getTags($event)">
+  <option *ngFor="let opt of intervalList" [value]="opt"> {{opt}}</option>
+</select>
+
+<br>
+<button (click)="postNews()"> Post News </button>
+<br>
+<h1> Top Tags</h1>
+
+
+<div *ngIf="tagsList; else noNews" >
+  <p *ngFor="let tag of tagsList">
+      <a [routerLink]="">{{tag.tag}}  ({{tag.count}})</a>
+  </p>
+</div>
+
+
+<ng-template #noNews>
+  No news hashtags found within the last {{interval}} minutes
+</ng-template>
+
