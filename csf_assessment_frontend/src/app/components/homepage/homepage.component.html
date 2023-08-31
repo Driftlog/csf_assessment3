@@ -14,7 +14,7 @@
 
 <div *ngIf="tagsList; else noNews" >
   <p *ngFor="let tag of tagsList">
-      <a [routerLink]="">{{tag.tag}}  ({{tag.count}})</a>
+      <a [routerLink]="['/newslist']" [queryParams]="{tag : tag.tag, count :tag.count}"> {{tag.tag}}  ({{tag.count}})</a>
   </p>
 </div>
 
